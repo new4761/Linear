@@ -22,17 +22,17 @@ public class jacobi {
         }
         do {
             opreation(martix, Xvalue, input, Checkjaco);
-           logValue(Xvalue);
+           //logValue(Xvalue);
         } while (CheckJaco(Checkjaco, Xvalue));
-
+        logValue(Xvalue);
     }
 
     public static boolean CheckJaco(Double Checkjaco[], Double Xvalue[]) {
         boolean check = true;
         for (int i = 0; i < Checkjaco.length; i++) {
             Double tmpData=(Xvalue[i]-Checkjaco[i])/Xvalue[i];
-            tmpData=Math.abs(tmpData);
-          //  System.out.println("tmpData :" +tmpData);
+            tmpData=Math.abs(tmpData)*100;
+        //  System.out.println("tmpData :" +tmpData);
             if (tmpData < 0.01) {
                 check = false;
             }
